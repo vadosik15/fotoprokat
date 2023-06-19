@@ -1,0 +1,124 @@
+.header {
+
+  &-desctop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 135px;
+    height: 75px;
+
+    @include onDesktop {
+      padding-left: 20px;
+      height: 50px;
+    }
+
+    @include onTablet {
+      height: 40px;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+
+    &__logo {}
+
+    &__navigation {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+
+      @include onTablet {
+        font-size: 10px;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+
+      & img {
+        position: relative;
+        border-left: 1px #EFEFEF solid;
+        border-right: 1px #EFEFEF solid;
+        padding: 28px;
+
+        @include onDesktop {
+          padding: 14px;
+          padding-right: 14px;
+          padding-left: 14px;
+        }
+        @include onTablet {
+          padding: 10px;
+          padding-right: 14px;
+          padding-left: 14px;
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  &-mobile {
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 12px;
+    @include onPhone {
+      display: flex;
+    }
+
+    &__icons {
+      display: flex;
+      gap: 20px;
+      height: 50%;
+      width: 30%;
+      & img { 
+        cursor: pointer;
+      }
+    }
+
+    &__navigation {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      height: 50%;
+      width: 30%;
+
+      & img { 
+        cursor: pointer;
+      }
+    }
+
+    &__logo {
+      height: 30px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__list {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+
+    @include onTablet {
+      gap: 10px;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $text-color;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+  }
+}
